@@ -53,11 +53,11 @@ function App() {
         
         <ul id='contents'>
           <li className='content'><img src='./icons8-favorites.svg' alt="" id='nav-logo'/></li>
-          <li className='content'><Link to='/' >Home</Link></li> 
-          {authenticatedUser>0 ? <li className='content'><Link to='/Profile'>Profile</Link></li> : ''}
+          <li className='content'><Link to='/React-ecom-trial' >Home</Link></li> 
+          {authenticatedUser>0 ? <li className='content'><Link to='/React-ecom-trial/Profile'>Profile</Link></li> : ''}
           
-          {authenticatedUser<0 ? <li className='content'><Link to='/Login'>Login</Link></li> : <li className='content'><button onClick={() => setauthenticatedUser(-1)}></button></li>}
-          <li className='content'><Link to='/Register'>Register</Link></li>
+          {authenticatedUser<0 ? <li className='content'><Link to='/React-ecom-trial/Login'>Login</Link></li> : <li className='content'><button onClick={() => setauthenticatedUser(-1)}></button></li>}
+          <li className='content'><Link to='/React-ecom-trial/Register'>Register</Link></li>
 
         </ul>
 
