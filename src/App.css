@@ -1,38 +1,212 @@
-.App {
-  text-align: center;
+
+:root {
+   --navbar-color: #A04668; /* #32746D */
+  --primary-color: #743235;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+  width: 100%;
+  display: flex;
+  background-color: var(--navbar-color);
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#contents{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  
+
+
+}
+
+
+
+.content{
+  list-style-type: none;
+}
+
+.content a{
+  text-decoration: none;
+  color: black;
+}
+
+#shopping-cart{
+  margin-right: 80px;
+  display: flex;
+
+}
+
+#shopping-cart p{
+  background-color: red;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+.modal-cart{
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-cart-content{
+  background-color: white;
+  height: 300px;
+  width: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.product-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 50px;
+  position: relative;
+  min-height: 510px;
+  
+  
+  
+
+
+}
+
+
+
+.product-card img {
+  width: 100%;
+  height: 390px;
+  border-style: solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 5px;
+  border-radius: 25px;
+}
+
+.product-card{
+  height: 500px;
+  border-style: solid;
+  border-radius: 25px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-width: 0px;
+  position: relative;
+
+
+}
+
+.product-card h1{
+  font-size: larger;
+}
+
+.product-desc{
+  margin-top: 150px;
+}
+
+.close-modal-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.login-page{
+  height: calc(100vh - 50px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: linear-gradient(#A04668, #BC8DA0, #D9D0DE) ;  linear-gradient(#3e3eaa, #8c87e6) */
+  background-image: url(../public/wave-haikei\ \(1\).svg);
+  
+  background-size: cover;
+  
+}
+
+.login-window form{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.login-window {
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 500px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.834);
+  border-radius: 50px;
+  /* background-image: linear-gradient(#4238a3, #5d79a2) ; */
+}
+
+.product-loader {
+  position: absolute;
+  grid-column-start: 2;
+  left: 8%;
+  
+}
+
+.product-card:hover .hover-description{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+
   color: white;
+  visibility: visible;
+
 }
 
-.App-link {
-  color: #61dafb;
+.hover-description{
+  visibility: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+th, td {
+  border-style: solid;
+
+}
+
+table {
+  border-collapse: collapse;
 }
