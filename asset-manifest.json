@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/React-ecom-trial/static/css/main.6ec3c135.css",
-    "main.js": "/React-ecom-trial/static/js/main.bcc92278.js",
+    "main.js": "/React-ecom-trial/static/js/main.0ca1ce2e.js",
     "static/js/787.a86f3764.chunk.js": "/React-ecom-trial/static/js/787.a86f3764.chunk.js",
     "static/media/logo.svg": "/React-ecom-trial/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/React-ecom-trial/index.html",
     "static/media/wave-haikei (1).svg": "/React-ecom-trial/static/media/wave-haikei (1).c0630c4bc50423f65472.svg",
     "main.6ec3c135.css.map": "/React-ecom-trial/static/css/main.6ec3c135.css.map",
-    "main.bcc92278.js.map": "/React-ecom-trial/static/js/main.bcc92278.js.map",
+    "main.0ca1ce2e.js.map": "/React-ecom-trial/static/js/main.0ca1ce2e.js.map",
     "787.a86f3764.chunk.js.map": "/React-ecom-trial/static/js/787.a86f3764.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6ec3c135.css",
-    "static/js/main.bcc92278.js"
+    "static/js/main.0ca1ce2e.js"
   ]
 }
