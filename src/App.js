@@ -102,10 +102,10 @@ function App() {
       </div>
 
       <Routes>
-        <Route path="/" element={<Home UserCart={PurchasedProducts} UpdateCart={setPurchasedProducts} ProductList={Products} UpdateProductList={setProducts} FetchProducts={getProduct} isFetched={ProductsFetched}/>}/>
-        <Route path='/Profile/:id' element={<Profile/>}/>
-        <Route path='/Login' element={<Login UserList={Users} isFetched={UsersFetched} fetchUsers={getUsers} setCurrentUser={setauthenticatedUser} CurrentUser={authenticatedUser}/>}/>
-        <Route path='/Register' element={<Register UserList={Users} isFetched={UsersFetched} fetchUsers={getUsers} updateUsers={setUsers}/>}/>
+        <Route path="/React-ecom-trial" element={<Home UserCart={PurchasedProducts} UpdateCart={setPurchasedProducts} ProductList={Products} UpdateProductList={setProducts} FetchProducts={getProduct} isFetched={ProductsFetched}/>}/>
+        <Route path='/React-ecom-trial/Profile/:id' element={<Profile/>}/>
+        <Route path='/React-ecom-trial/Login' element={<Login UserList={Users} isFetched={UsersFetched} fetchUsers={getUsers} setCurrentUser={setauthenticatedUser} CurrentUser={authenticatedUser}/>}/>
+        <Route path='/React-ecom-trial/Register' element={<Register UserList={Users} isFetched={UsersFetched} fetchUsers={getUsers} updateUsers={setUsers}/>}/>
         
       </Routes>
       
