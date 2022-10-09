@@ -75,14 +75,14 @@ function App() {
         <div className='modal-cart-content' >
           <AiOutlineClose onClick={() => setOpenCart(true)} className='close-modal-btn'/>
           <table className='cart-list'>
-            <tr key="">
+            <tr>
               <th>product</th>
               <th>quantity</th>
               <th>price</th>
             </tr>
-            {PurchasedProducts.slice(1, PurchasedProducts.length).map( (prod) => {
+            {PurchasedProducts.slice(1, PurchasedProducts.length).map( (prod,i) => {
               return(
-               <tr key="">
+               <tr key={`product-${i}`}>
                 <td>{prod.title}</td>
                 <td>x{prod.quantity}</td>
                 <td>{prod.price}$</td>
@@ -90,7 +90,7 @@ function App() {
               )
               
             })}
-            <tr key="">
+            <tr key="total">
               <td></td>
               <td></td>
               <td>{PurchasedProducts.slice(1, PurchasedProducts.length).reduce( (p,c) => p + c.quantity*c.price, 0).toFixed(2)}$</td>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,300&display=swap');
 
 :root {
    --navbar-color: #A04668; /* #32746D */
@@ -10,6 +11,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
 }
 
 nav {
@@ -93,14 +95,30 @@ nav {
   row-gap: 50px;
   position: relative;
   min-height: 510px;
-  
+
   
   
 
 
 }
 
+.flip-side {
+  border-top: 1px solid;
+  margin-left: 50px;
+  height: 500px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-radius: 25px;
+}
 
+.flip-side p{
+  padding-top: 20px;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 .product-card img {
   width: 100%;
@@ -111,18 +129,23 @@ nav {
   border-right: 0px;
   border-bottom: 5px;
   border-radius: 25px;
+  object-fit: contain;
+  padding-top: 10px;
 }
 
 .product-card{
   height: 500px;
-  border-style: solid;
   border-radius: 25px;
   margin-left: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
-  border-width: 0px;
+
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
   position: relative;
 
 
@@ -181,25 +204,6 @@ nav {
   grid-column-start: 2;
   left: 8%;
   
-}
-
-.product-card:hover .hover-description{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.3);
-  height: 100%;
-  width: 100%;
-  border-radius: 25px;
-
-  color: white;
-  visibility: visible;
-
-}
-
-.hover-description{
-  visibility: hidden;
 }
 
 th, td {
