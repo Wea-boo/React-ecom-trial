@@ -65,16 +65,15 @@ export default function Home(props) {
         return(
           <ReactCardFlip isFlipped={isFlipped[id]}>
 
-            <div className='product-card' onMouseEnter={() => {setisFlipped(isFlipped.map( (e,i) => i==id ? e = true : e = false)); console.log(isFlipped)}}>
+            <div className='product-card' onMouseEnter={() => setisFlipped(isFlipped.map( (e,i) => i==id ? e = true : e = false))}>
            <img src={prod.image} alt="" />
            <h1>{prod.title}</h1>
            
            <StarRatings rating={prod?.rating?.rate} starRatedColor="blue" numberOfStars={5} name='rating' starDimension='20px' starSpacing='5px'/>
-           {/* <p className='product-desc'>{prod.description}</p> */}
             <p>{prod.price}$</p>
             </div>
 
-            <div className="flip-side" onMouseLeave={() => {setisFlipped(isFlipped.map( (e,i) => i==id ? e = false : e)); console.log(isFlipped)}}>
+            <div className="flip-side" onMouseLeave={() => setisFlipped(isFlipped.map( (e,i) => i==id ? e = false : e))}>
             <p>{prod.description}</p>
             <button onClick={() => handlePurchase(prod)}>Purchase</button>
            </div>
