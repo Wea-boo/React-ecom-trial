@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai'
+import { IconContext } from 'react-icons/lib';
 import StarRatings from 'react-star-ratings';
 import ReactCardFlip from 'react-card-flip';
 
 export default function Home(props) {
   const { UserCart, UpdateCart, ProductList, UpdateProductList, FetchProducts, isFetched} = props;
-
+  const [quantity, setquantity] = useState([]);
   const [FilteredProducts, setFilteredProducts] = useState([{}]);
   const [isFlipped, setisFlipped] = useState([]);
 
@@ -33,15 +35,16 @@ export default function Home(props) {
     else{
       setFilteredProducts(ProductList)
       setisFlipped(new Array(ProductList.length).fill(false))
+      setquantity(new Array(ProductList.length).fill(1))
     } 
 
   }, [isFetched]);
 
-  const handlePurchase = (prod) => {
+  const handlePurchase = (prod, qte) => {
     const product_found = UserCart.find(e => e.id == prod.id)
     if(product_found){
-      UpdateCart(UserCart.map(e =>  e.id == prod.id ? {...e, quantity: e.quantity+1} : e))
-    }else UpdateCart([...UserCart,{...prod, quantity: 1}])
+      UpdateCart(UserCart.map(e =>  e.id == prod.id ? {...e, quantity: e.quantity+qte} : e))
+    }else UpdateCart([...UserCart,{...prod, quantity: qte}])
   }
 
   
@@ -75,7 +78,14 @@ export default function Home(props) {
 
             <div className="flip-side" onMouseLeave={() => setisFlipped(isFlipped.map( (e,i) => i==id ? e = false : e))}>
             <p>{prod.description}</p>
-            <button onClick={() => handlePurchase(prod)}>Purchase</button>
+            <button onClick={() => handlePurchase(prod, quantity[id])}>Purchase</button>
+            <div className='qty-container'>
+              
+              {quantity[id] < 2 ?  <AiOutlineMinusCircle style={{visibility: 'hidden'}}>-</AiOutlineMinusCircle> : <AiOutlineMinusCircle className='qty-icon' onClick={() => setquantity(quantity.map((e,i) => i==id ? e = e-1 : e))}>-</AiOutlineMinusCircle>}
+              <input value={quantity[id] || ''} onChange={(event) => setquantity(quantity.map((e,i) => i==id ? e = event.target.value : e))} />
+              <AiOutlinePlusCircle className='qty-icon' onClick={() => setquantity(quantity.map((e,i) => i==id ? e = e+1 : e))}>+</AiOutlinePlusCircle>
+              
+            </div>
            </div>
           </ReactCardFlip>
           

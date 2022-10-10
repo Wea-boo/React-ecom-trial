@@ -63,7 +63,6 @@ function App() {
 
         <div id='shopping-cart'>
          <FaShoppingCart className='cart-icon' onClick={() => setOpenCart(!OpenCart) }/>
-//          <p>{PurchasedProducts.slice(1, PurchasedProducts.length).reduce( (p,c) => p + c.quantity, 0)}</p>  
          <p>{PurchasedProducts.length -1}</p> 
         </div>
         
